@@ -30,7 +30,7 @@ export const notebooks: Notebook[] = [
     tags: [{ name: 'Features', color: '#8b5cf6' }],
     path: '/assets/actual_notebooks/Features.ipynb',
     featured: true,
-    popular: true,
+    bestToStart: true,
   },
   {
     id: 'http-example',
@@ -54,7 +54,7 @@ export const notebooks: Notebook[] = [
       { name: 'DataFrame', color: '#3b82f6' },
     ],
     path: '/assets/actual_notebooks/Weather Notebook.ipynb',
-    popular: true,
+    bestToStart: true,
   },
   {
     id: 'import',
@@ -71,7 +71,7 @@ export const notebooks: Notebook[] = [
     authors: [{ name: 'Kotlin team', verified: true }],
     tags: [{ name: 'Performance', color: '#eab308' }],
     path: '/assets/actual_notebooks/benchmarks.ipynb',
-    popular: true,
+    bestToStart: true,
   },
   {
     id: 'currency-rates',

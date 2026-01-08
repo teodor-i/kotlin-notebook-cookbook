@@ -12,7 +12,7 @@ export interface Notebook {
   tags: Tag[];
   path: string;
   featured?: boolean;
-  popular?: boolean;
+  bestToStart?: boolean;
 }
 
 export interface Tag {

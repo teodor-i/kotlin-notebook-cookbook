@@ -10,8 +10,8 @@ export function MainPage() {
     []
   );
 
-  const popularNotebooks = useMemo(
-    () => notebooks.filter((n) => n.popular),
+  const bestToStartNotebooks = useMemo(
+    () => notebooks.filter((n) => n.bestToStart),
     []
   );
 
@@ -41,13 +41,13 @@ export function MainPage() {
       />
 
       <NotebookList
-        notebooks={popularNotebooks}
-        title="Popular cookbooks"
+        notebooks={bestToStartNotebooks}
+        title="Best to start"
       />
 
       <NotebookList
         notebooks={notebooks}
-        title={`All ${notebooks.length} cookbooks`}
+        title="All Notebooks"
       />
     </div>
   );
