@@ -128,7 +128,6 @@ export function NotebookPage() {
                       </div>
                       <span className="author-name">
                         {author.name}
-                        {author.verified && <span className="author-verified-text">(Kotlin)</span>}
                       </span>
                     </div>
                   ))}

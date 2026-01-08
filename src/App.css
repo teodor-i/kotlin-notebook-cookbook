@@ -21,7 +21,7 @@
 
 .app.light {
   --background: #ffffff;
-  --background-nav: rgba(255, 255, 255, 0.8);
+  --background-nav: #ffffff;
   --text-primary: #1f2328;
   --text-secondary: #656d76;
   --text-muted: #8b949e;
