@@ -136,7 +136,7 @@ export function NotebookPage() {
 
                 <div className="notebook-actions">
                   <a
-                    href={`https://github.com/example/kotlin-notebook-cookbook/blob/main${notebook.path}`}
+                    href={`https://github.com/teodor-i/kotlin-notebook-cookbook/blob/main/public${notebook.path}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="notebook-action-link"
