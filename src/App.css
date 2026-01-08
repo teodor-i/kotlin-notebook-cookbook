@@ -1,0 +1,40 @@
+.app {
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app.dark {
+  --background: #0d1117;
+  --background-nav: rgba(13, 17, 23, 0.8);
+  --text-primary: #f0f6fc;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+  --card-border: #30363d;
+  --muted: rgba(128, 128, 128, 0.1);
+  --accent-color: #7f52ff;
+  --accent-color-hover: #6b45d9;
+
+  background-color: var(--background);
+  color: var(--text-primary);
+  color-scheme: dark;
+}
+
+.app.light {
+  --background: #ffffff;
+  --background-nav: rgba(255, 255, 255, 0.8);
+  --text-primary: #1f2328;
+  --text-secondary: #656d76;
+  --text-muted: #8b949e;
+  --card-border: #d0d7de;
+  --muted: rgba(128, 128, 128, 0.1);
+  --accent-color: #7f52ff;
+  --accent-color-hover: #6b45d9;
+
+  background-color: var(--background);
+  color: var(--text-primary);
+  color-scheme: light;
+}
+
+.main-content {
+  min-height: calc(100vh - 64px);
+}

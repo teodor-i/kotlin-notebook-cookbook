@@ -1,0 +1,149 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  position: sticky;
+  top: 0;
+  background-color: var(--background-nav);
+  height: 64px;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+}
+
+@media (min-width: 640px) {
+  .header {
+    padding: 0.75rem 2rem;
+  }
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.header-kotlin-logo {
+  fill: currentColor;
+}
+
+.logo-text {
+  font-size: 16px;
+  font-weight: 600;
+  fill: currentColor;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+@media (min-width: 640px) {
+  .header-nav-links {
+    gap: 0.5rem;
+    margin-right: 0.75rem;
+  }
+}
+
+.header-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  background: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.header-nav-btn:hover {
+  background-color: var(--card-border);
+}
+
+.header-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.header-nav-link:hover {
+  background-color: var(--card-border);
+}
+
+.header-theme-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: background-color 0.2s;
+}
+
+.header-theme-btn:hover {
+  background-color: var(--card-border);
+}
+
+.header-search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: stroke-width 0.2s;
+}
+
+.header-search-btn:hover svg {
+  stroke-width: 3;
+}
+
+.icon-chevron {
+  width: 14px;
+  height: 14px;
+}
+
+.icon-external {
+  width: 14px;
+  height: 14px;
+  margin-left: 2px;
+}
+
+.icon-github {
+  width: 14px;
+  height: 14px;
+  margin-left: 6px;
+}
+
+/* Hide some elements on mobile */
+@media (max-width: 639px) {
+  .icon-external,
+  .header-nav-link span {
+    display: none;
+  }
+}

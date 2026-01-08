@@ -1,0 +1,31 @@
+createdAt,title,count
+2025-07-09T08:21:39Z,[JEWEL-874] Fix `reverseLayout` on non-lazy scrolling containers,0
+2025-07-08T09:20:58Z,[SUPPORT-672] Restructure and refine the README.md,0
+2025-07-02T14:19:55Z,[JEWEL-869] Fix Releases Demo tab in Jewel Plugin,0
+2025-06-27T16:32:21Z,[JEWEL-845] Add Context Menu to External Links,0
+2025-06-25T16:26:01Z,[JEWEL-97] Render popups using the JBPopup component on IDE,0
+2025-06-25T15:25:33Z,PY-82262: remove usage of noexcept due to no jetbrains ide support,0
+2025-06-25T09:21:35Z,Make Gradle API repackaging script compatible with Gradle 9,0
+2025-06-21T21:57:21Z,IJPL-54591: Use XDG Desktop Portal to sync light/dark mode on Linux,12
+2025-06-11T11:12:54Z,"Minor: Rename to use `with` prefix, where appropriate",0
+2025-06-07T20:06:41Z,Improve the handling of Gradle DSL Elements,2
+2025-06-07T15:44:07Z,change maven 4 support to maven 4.0.0-rc-4-SNAPSHOT,1
+2025-06-06T15:43:47Z,Consume version catalog for included gradle build module,0
+2025-06-05T16:56:22Z,[JEWEL-828] Update the release notes for 0.29,0
+2025-05-29T12:21:20Z,IJPL-189791 add patterns to GradleConsoleFilter,0
+2025-05-19T09:32:49Z,"Add GH alerts support to Markdown, fix inline code font",0
+2025-05-12T21:01:28Z,Handle when oldRectangle is null,0
+2025-05-01T09:04:17Z,Markdown Preview enhancements and bug fixes,1
+2025-04-27T21:40:00Z,IDEA-164593: make 'Kill the debug process immediately'=true by default,0
+2025-04-25T22:58:21Z,[xml] Fix pubIdChars,0
+2025-04-25T21:53:13Z,Fix py 54482: Show True/False/None in decorator argument list completions,0
+2025-04-19T12:33:31Z,IDEA-328157 Allow gradle installations to be read-only,0
+2025-04-17T19:46:44Z,WIP Backup and Sync changes for 251,0
+2025-04-15T14:13:17Z,Phased sync optimization and source check,0
+2025-04-15T14:12:40Z,Don't mark top level project modules as source set modules,0
+2025-04-15T12:20:56Z,Avoid use of IdentityHashMap to future-proof implementation,0
+2025-04-15T10:34:45Z,maven: honor user-specified dependency collector implementation,0
+2025-04-11T04:52:05Z,KTIJ-31910 Port ReplaceRangeToWith[Range]UntilInspection to K2.,0
+2025-03-30T00:22:36Z,[IDEA-367321] Find new custom handlers on recursive dependency discovery,0
+2025-03-28T11:22:36Z,[IDEA-367989] Fix maven offline mode and don't run project update on offline toggle,0
+2025-03-25T17:23:42Z,[JEWEL-741] Fix syntax highlight in markdown,0

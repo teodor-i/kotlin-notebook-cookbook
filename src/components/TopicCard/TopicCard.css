@@ -1,0 +1,34 @@
+.topic-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border-radius: 8px;
+  height: 70px;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: white;
+  background-color: #4b5563;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.2s;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 640px) {
+  .topic-card {
+    height: 130px;
+    padding: 1rem;
+  }
+}
+
+.topic-card:hover {
+  transform: scale(1.02);
+}
+
+.topic-card:focus {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
+}
