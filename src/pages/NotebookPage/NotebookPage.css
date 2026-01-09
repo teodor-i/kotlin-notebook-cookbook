@@ -406,3 +406,27 @@
   white-space: pre-wrap;
   word-break: break-word;
 }
+
+.cell-output-html {
+  padding: 1rem;
+}
+
+.cell-output-html img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.cell-output-image {
+  padding: 1rem;
+}
+
+.cell-output-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.cell-output + .cell-output {
+  border-top: 1px solid var(--card-border);
+}

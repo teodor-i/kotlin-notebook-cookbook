@@ -4,14 +4,23 @@ import { notebooks } from '../../data/notebooks';
 import { CodeBlock } from '../../components';
 import './NotebookPage.css';
 
+interface CellOutput {
+  output_type: string;
+  text?: string | string[];
+  data?: {
+    'text/plain'?: string | string[];
+    'text/html'?: string | string[];
+    'text/markdown'?: string | string[];
+    'image/png'?: string | string[];
+    'image/jpeg'?: string | string[];
+    [key: string]: string | string[] | undefined;
+  };
+}
+
 interface NotebookCell {
   cell_type: 'code' | 'markdown';
   source: string[];
-  outputs?: Array<{
-    output_type: string;
-    text?: string[];
-    data?: Record<string, string[]>;
-  }>;
+  outputs?: CellOutput[];
   metadata?: Record<string, unknown>;
 }
 
@@ -194,29 +203,74 @@ function NotebookCellView({ cell }: NotebookCellViewProps) {
   }
 
   const outputs = cell.outputs || [];
-  const outputText = outputs
-    .map((output) => {
-      if (output.text) {
-        return Array.isArray(output.text) ? output.text.join('') : output.text;
-      }
-      if (output.data?.['text/plain']) {
-        return Array.isArray(output.data['text/plain'])
-          ? output.data['text/plain'].join('')
-          : output.data['text/plain'];
-      }
-      return '';
-    })
-    .filter(Boolean)
-    .join('\n');
+
+  const renderOutput = (output: CellOutput, index: number) => {
+    // Handle HTML output (includes images, tables, etc.)
+    if (output.data?.['text/html']) {
+      const html = Array.isArray(output.data['text/html'])
+        ? output.data['text/html'].join('')
+        : output.data['text/html'];
+      return (
+        <div
+          key={index}
+          className="cell-output cell-output-html"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      );
+    }
+
+    // Handle direct image output
+    if (output.data?.['image/png']) {
+      const imgData = Array.isArray(output.data['image/png'])
+        ? output.data['image/png'].join('')
+        : output.data['image/png'];
+      return (
+        <div key={index} className="cell-output cell-output-image">
+          <img src={`data:image/png;base64,${imgData}`} alt="Output" />
+        </div>
+      );
+    }
+
+    // Handle markdown output
+    if (output.data?.['text/markdown']) {
+      const markdown = Array.isArray(output.data['text/markdown'])
+        ? output.data['text/markdown'].join('')
+        : output.data['text/markdown'];
+      return (
+        <div key={index} className="cell-output">
+          <MarkdownContent content={markdown} />
+        </div>
+      );
+    }
+
+    // Handle plain text output
+    if (output.text) {
+      const text = Array.isArray(output.text) ? output.text.join('') : output.text;
+      return (
+        <div key={index} className="cell-output">
+          <pre>{text}</pre>
+        </div>
+      );
+    }
+
+    if (output.data?.['text/plain']) {
+      const text = Array.isArray(output.data['text/plain'])
+        ? output.data['text/plain'].join('')
+        : output.data['text/plain'];
+      return (
+        <div key={index} className="cell-output">
+          <pre>{text}</pre>
+        </div>
+      );
+    }
+
+    return null;
+  };
 
   return (
     <div className="cell cell-code">
       <CodeBlock code={source} language="kotlin" />
-      {outputText && (
-        <div className="cell-output">
-          <pre>{outputText}</pre>
-        </div>
-      )}
+      {outputs.map((output, index) => renderOutput(output, index))}
     </div>
   );
 }
