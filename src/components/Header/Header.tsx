@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { notebooks } from '../../data/notebooks';
 import './Header.css';
 
 interface HeaderProps {
@@ -7,6 +9,45 @@ interface HeaderProps {
 }
 
 export function Header({ onThemeToggle, isDarkMode = true }: HeaderProps) {
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
+
+  const filteredNotebooks = searchQuery.trim()
+    ? notebooks.filter((n) =>
+        n.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        n.tags.some((t) => t.name.toLowerCase().includes(searchQuery.toLowerCase()))
+      ).slice(0, 8)
+    : [];
+
+  useEffect(() => {
+    if (searchOpen && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [searchOpen]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setSearchOpen(true);
+      }
+      if (e.key === 'Escape') {
+        setSearchOpen(false);
+        setSearchQuery('');
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  const handleResultClick = (id: string) => {
+    setSearchOpen(false);
+    setSearchQuery('');
+    navigate(`/notebook/${id}`);
+  };
+
   return (
     <nav className="header">
       <Link to="/" className="header-logo">
@@ -15,11 +56,6 @@ export function Header({ onThemeToggle, isDarkMode = true }: HeaderProps) {
 
       <div className="header-nav">
         <div className="header-nav-links">
-          <button className="header-nav-btn">
-            Topics
-            <ChevronDownIcon />
-          </button>
-          <Link to="/about" className="header-nav-link">About</Link>
           <a
             href="https://kotlinlang.org/docs/kotlin-notebook-overview.html"
             target="_blank"
@@ -47,10 +83,49 @@ export function Header({ onThemeToggle, isDarkMode = true }: HeaderProps) {
           </button>
         </div>
 
-        <button className="header-search-btn">
+        <button className="header-search-btn" onClick={() => setSearchOpen(true)}>
           <SearchIcon />
         </button>
       </div>
+
+      {searchOpen && (
+        <div className="search-overlay" onClick={() => { setSearchOpen(false); setSearchQuery(''); }}>
+          <div className="search-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="search-input-wrapper">
+              <SearchIcon />
+              <input
+                ref={searchInputRef}
+                type="text"
+                className="search-input"
+                placeholder="Search notebooks..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <span className="search-shortcut">ESC</span>
+            </div>
+            {filteredNotebooks.length > 0 && (
+              <ul className="search-results">
+                {filteredNotebooks.map((notebook) => (
+                  <li key={notebook.id}>
+                    <button
+                      className="search-result-item"
+                      onClick={() => handleResultClick(notebook.id)}
+                    >
+                      <span className="search-result-title">{notebook.title}</span>
+                      <span className="search-result-tags">
+                        {notebook.tags.map((t) => t.name).join(', ')}
+                      </span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {searchQuery.trim() && filteredNotebooks.length === 0 && (
+              <div className="search-no-results">No notebooks found</div>
+            )}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
@@ -58,14 +133,6 @@ export function Header({ onThemeToggle, isDarkMode = true }: HeaderProps) {
 function KotlinLogo() {
   return (
     <span className="header-logo-text">Kotlin Notebook Cookbook</span>
-  );
-}
-
-function ChevronDownIcon() {
-  return (
-    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="icon-chevron">
-      <path d="M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"/>
-    </svg>
   );
 }
 
