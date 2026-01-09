@@ -1,24 +1,38 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { TopicCard } from '../../components/TopicCard';
 import { NotebookList } from '../../components/NotebookList';
 import { notebooks, topics } from '../../data/notebooks';
 import './MainPage.css';
 
 export function MainPage() {
+  const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
+
+  const filteredNotebooks = useMemo(() => {
+    if (!selectedTopic) return notebooks;
+    const topic = topics.find((t) => t.id === selectedTopic);
+    if (!topic) return notebooks;
+    return notebooks.filter((n) =>
+      n.tags.some((tag) => tag.name.toLowerCase() === topic.name.toLowerCase())
+    );
+  }, [selectedTopic]);
+
   const featuredNotebooks = useMemo(
-    () => notebooks.filter((n) => n.featured),
-    []
+    () => filteredNotebooks.filter((n) => n.featured),
+    [filteredNotebooks]
   );
 
   const bestToStartNotebooks = useMemo(
-    () => notebooks.filter((n) => n.bestToStart),
-    []
+    () => filteredNotebooks.filter((n) => n.bestToStart),
+    [filteredNotebooks]
   );
 
   const handleTopicClick = (topicId: string) => {
-    console.log('Topic clicked:', topicId);
-    // TODO: Implement filtering by topic
+    setSelectedTopic((prev) => (prev === topicId ? null : topicId));
   };
+
+  const selectedTopicName = selectedTopic
+    ? topics.find((t) => t.id === selectedTopic)?.name
+    : null;
 
   return (
     <div className="main-page">
@@ -30,15 +44,23 @@ export function MainPage() {
               key={topic.id}
               topic={topic}
               onClick={handleTopicClick}
+              isSelected={selectedTopic === topic.id}
             />
           ))}
         </div>
       </section>
 
-      <NotebookList
-        notebooks={featuredNotebooks}
-        title="Featured cookbooks"
-      />
+      {selectedTopic && (
+        <div className="filter-badge">
+          <span>Filtered by: {selectedTopicName}</span>
+          <button
+            className="filter-clear-btn"
+            onClick={() => setSelectedTopic(null)}
+          >
+            Clear
+          </button>
+        </div>
+      )}
 
       <NotebookList
         notebooks={bestToStartNotebooks}
@@ -46,8 +68,13 @@ export function MainPage() {
       />
 
       <NotebookList
-        notebooks={notebooks}
-        title="All Notebooks"
+        notebooks={featuredNotebooks}
+        title="Featured cookbooks"
+      />
+
+      <NotebookList
+        notebooks={filteredNotebooks}
+        title={selectedTopic ? `${selectedTopicName} Notebooks` : 'All Notebooks'}
       />
     </div>
   );

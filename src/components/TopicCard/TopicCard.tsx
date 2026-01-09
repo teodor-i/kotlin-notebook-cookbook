@@ -4,9 +4,10 @@ import './TopicCard.css';
 interface TopicCardProps {
   topic: Topic;
   onClick?: (topicId: string) => void;
+  isSelected?: boolean;
 }
 
-export function TopicCard({ topic, onClick }: TopicCardProps) {
+export function TopicCard({ topic, onClick, isSelected }: TopicCardProps) {
   const handleClick = () => {
     onClick?.(topic.id);
   };
@@ -20,9 +21,9 @@ export function TopicCard({ topic, onClick }: TopicCardProps) {
 
   return (
     <div
-      role="link"
+      role="button"
       tabIndex={0}
-      className="topic-card"
+      className={`topic-card ${isSelected ? 'topic-card-selected' : ''}`}
       style={{ background: topic.backgroundImage }}
       onClick={handleClick}
       onKeyDown={handleKeyDown}

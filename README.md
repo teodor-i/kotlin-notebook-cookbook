@@ -1,73 +1,36 @@
-# React + TypeScript + Vite
+# Kotlin Notebook Samples
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains sample Kotlin Notebooks that could serve as templates for your tasks.
 
-Currently, two official plugins are available:
+Other examples of interesting Notebooks:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### **Kotlin DataFrame Notebooks**
+https://github.com/Kotlin/dataframe/tree/master/examples/notebooks  
+DataFrame is a powerful Kotlin library for structured data processing. These notebooks show how to load, transform, analyze, and work with hierarchical and type‑safe data.
 
-## React Compiler
+### **Kandy Visualization Examples**
+https://kotlin.github.io/kandy/examples.html  
+Official documentation and examples for Kandy — a modern Kotlin DSL for building rich visualizations with Lets‑Plot and ECharts.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### **Kotlin AI Examples**
+https://github.com/Kotlin/Kotlin-AI-Examples/tree/master/notebooks  
+A collection of notebooks demonstrating Kotlin integrations with Spring AI, OpenAI, LangChain4j, ARC (Agents ReaCtor), xef.ai, and inference frameworks like KIEngine and ORT.  
+Includes topics such as prompt engineering, streaming, tools, structured outputs, RAG, image/audio generation, local models, agents, summarization, and more.
 
-## Expanding the ESLint configuration
+#### Spring AI Notebooks
+Interactive tutorial series covering Spring AI fundamentals.
+https://github.com/Kotlin/Kotlin-AI-Examples/tree/master/notebooks/spring-ai
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+#### AI Agents Notebooks
+Design patterns for building intelligent AI agents.
+https://github.com/Kotlin/Kotlin-AI-Examples/tree/master/notebooks/agents
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### **Koog Framework Notebooks**
+https://github.com/JetBrains/koog/tree/develop/examples/notebooks  
+Examples for Koog — a Kotlin framework for building AI agents with multiplatform support, tool integrations, workflows, history compression, LLM switching, observability, and advanced agent behavior.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### **Kotlin Notebook IntelliJ Platform Examples**
+https://github.com/Kotlin/kotlin-notebook-integrations/tree/master/integrations/intellij-platform/examples
+Interactive examples showing how to work with IntelliJ Platform APIs directly from Kotlin Notebooks inside the IDE.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
