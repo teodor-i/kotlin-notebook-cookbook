@@ -30,7 +30,7 @@ export function Header({ onThemeToggle, isDarkMode = true }: HeaderProps) {
             <ExternalLinkIcon />
           </a>
           <a
-            href="https://github.com/Kotlin/kotlin-jupyter"
+            href="https://github.com/teodor-i/kotlin-notebook-cookbook"
             target="_blank"
             rel="noopener noreferrer"
             className="header-nav-link"

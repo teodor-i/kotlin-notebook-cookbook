@@ -40,15 +40,31 @@ export function MainPage() {
     [filteredNotebooks]
   );
 
+  const chartsNotebooks = useMemo(
+    () => filteredNotebooks.filter((n) =>
+      n.tags.some((tag) => tag.name === 'Charts')
+    ),
+    [filteredNotebooks]
+  );
+
+  const dataFrameExamples = useMemo(
+    () => filteredNotebooks.filter((n) =>
+      n.tags.some((tag) => tag.name === 'DataFrame Examples')
+    ),
+    [filteredNotebooks]
+  );
+
   const moreNotebooks = useMemo(() => {
     const shownIds = new Set([
       ...bestToStartNotebooks.map((n) => n.id),
       ...featuredNotebooks.map((n) => n.id),
       ...springAiTutorials.map((n) => n.id),
       ...kotlinLanguageNotebooks.map((n) => n.id),
+      ...chartsNotebooks.map((n) => n.id),
+      ...dataFrameExamples.map((n) => n.id),
     ]);
     return filteredNotebooks.filter((n) => !shownIds.has(n.id));
-  }, [filteredNotebooks, bestToStartNotebooks, featuredNotebooks, springAiTutorials, kotlinLanguageNotebooks]);
+  }, [filteredNotebooks, bestToStartNotebooks, featuredNotebooks, springAiTutorials, kotlinLanguageNotebooks, chartsNotebooks, dataFrameExamples]);
 
   const handleTopicClick = (topicId: string) => {
     setSelectedTopic((prev) => (prev === topicId ? null : topicId));
@@ -107,6 +123,20 @@ export function MainPage() {
         <NotebookList
           notebooks={kotlinLanguageNotebooks}
           title="Kotlin Language Features"
+        />
+      )}
+
+      {chartsNotebooks.length > 0 && (
+        <NotebookList
+          notebooks={chartsNotebooks}
+          title="Charts"
+        />
+      )}
+
+      {dataFrameExamples.length > 0 && (
+        <NotebookList
+          notebooks={dataFrameExamples}
+          title="DataFrame Examples"
         />
       )}
 
