@@ -1,0 +1,50 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="kotlin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7f52ff"/>
+      <stop offset="100%" style="stop-color:#c084fc"/>
+    </linearGradient>
+    <linearGradient id="accent1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb"/>
+      <stop offset="100%" style="stop-color:#f5576c"/>
+    </linearGradient>
+    <linearGradient id="accent3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#43e97b"/>
+      <stop offset="100%" style="stop-color:#38f9d7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative shapes -->
+  <rect x="50" y="400" width="120" height="80" rx="12" fill="url(#accent1)" opacity="0.8"/>
+  <rect x="190" y="400" width="120" height="80" rx="12" fill="url(#accent2)" opacity="0.8"/>
+  <rect x="330" y="400" width="120" height="80" rx="12" fill="url(#accent3)" opacity="0.8"/>
+  <rect x="470" y="400" width="120" height="80" rx="12" fill="url(#kotlin)" opacity="0.8"/>
+
+  <!-- More decorative cards -->
+  <rect x="750" y="180" width="180" height="120" rx="12" fill="url(#accent1)" opacity="0.6"/>
+  <rect x="950" y="180" width="180" height="120" rx="12" fill="url(#accent2)" opacity="0.6"/>
+  <rect x="750" y="320" width="180" height="120" rx="12" fill="url(#accent3)" opacity="0.6"/>
+  <rect x="950" y="320" width="180" height="120" rx="12" fill="url(#kotlin)" opacity="0.6"/>
+
+  <!-- Kotlin logo shape -->
+  <path d="M50 50 L150 50 L100 100 L150 150 L50 150 Z" fill="url(#kotlin)"/>
+
+  <!-- Title -->
+  <text x="50" y="250" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="white">Kotlin Notebook</text>
+  <text x="50" y="330" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="white">Cookbook</text>
+
+  <!-- Subtitle -->
+  <text x="50" y="540" font-family="system-ui, -apple-system, sans-serif" font-size="28" fill="#8b949e">Interactive tutorials for DataFrame, Kandy, Spring AI and more</text>
+  <text x="50" y="580" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="#7f52ff">kotlinlang.org</text>
+</svg>
