@@ -80,15 +80,6 @@
       "path": "/assets/actual_notebooks/Spring AI/1. Spring AI Overview.ipynb"
     },
     {
-      "id": "spring-ai-intro",
-      "title": "Spring AI Intro",
-      "date": "Jan 9, 2026",
-      "authors": [{ "name": "Kotlin team", "verified": true }],
-      "tags": ["Spring AI Tutorials", "Spring AI"],
-      "path": "/assets/actual_notebooks/Spring AI/2. Intro.ipynb",
-      "featured": true
-    },
-    {
       "id": "kotlin-ai-prompts",
       "title": "Kotlin AI Prompts",
       "date": "Jan 9, 2026",
@@ -515,6 +506,15 @@
       "authors": [{ "name": "Kotlin team", "verified": true }],
       "tags": ["API", "DataFrame"],
       "path": "/assets/actual_notebooks/Get Currency Rates.ipynb",
+      "featured": true
+    },
+    {
+      "id": "spring-ai-intro",
+      "title": "Spring AI Intro",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Spring AI Tutorials", "Spring AI"],
+      "path": "/assets/actual_notebooks/Spring AI/2. Intro.ipynb",
       "featured": true
     },
     {
