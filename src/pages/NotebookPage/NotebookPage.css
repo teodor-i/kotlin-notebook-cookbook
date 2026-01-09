@@ -431,87 +431,17 @@
   border-top: 1px solid var(--card-border);
 }
 
-/* DataFrame styling */
+/* DataFrame styling - uses iframe with internal JS */
 .cell-output-dataframe {
-  padding: 1rem;
-  overflow-x: auto;
+  padding: 0;
+  overflow: hidden;
 }
 
-.cell-output-dataframe table.dataframe {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px;
-  background-color: var(--background);
-  color: var(--text-primary);
+.cell-output-dataframe iframe {
+  width: 100%;
+  min-height: 200px;
   border: none;
-  border-collapse: collapse;
-  width: auto;
-}
-
-.cell-output-dataframe table.dataframe th,
-.cell-output-dataframe table.dataframe td {
-  padding: 6px 12px;
-  border: 1px solid transparent;
-  text-align: left;
-}
-
-.cell-output-dataframe table.dataframe th {
-  background-color: var(--background);
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-.cell-output-dataframe table.dataframe th.bottomBorder {
-  border-bottom: 1px solid var(--card-border);
-}
-
-.cell-output-dataframe table.dataframe td {
-  vertical-align: top;
-  white-space: nowrap;
-}
-
-.cell-output-dataframe table.dataframe tbody > tr:nth-child(odd) {
-  background: rgba(128, 128, 128, 0.1);
-}
-
-.cell-output-dataframe table.dataframe tbody > tr:nth-child(even) {
-  background: var(--background);
-}
-
-.cell-output-dataframe table.dataframe tbody > tr:hover {
-  background: rgba(128, 128, 128, 0.2);
-}
-
-.cell-output-dataframe table.dataframe a {
-  color: var(--accent-color);
-  text-decoration: none;
-}
-
-.cell-output-dataframe table.dataframe a:hover {
-  text-decoration: underline;
-}
-
-.cell-output-dataframe .null {
-  color: var(--text-secondary);
-  opacity: 0.6;
-}
-
-.cell-output-dataframe .structural {
-  color: var(--text-secondary);
-  font-weight: bold;
-}
-
-.cell-output-dataframe .leftBorder {
-  border-left: 1px solid var(--card-border);
-}
-
-.cell-output-dataframe .rightBorder {
-  border-right: 1px solid var(--card-border);
-}
-
-.cell-output-dataframe p.dataframe_description {
-  color: var(--text-secondary);
-  margin: 0 0 0.5rem 0;
-  font-size: 0.875rem;
+  background: transparent;
 }
 
 /* Plot/Chart styling */
