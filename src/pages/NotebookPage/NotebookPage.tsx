@@ -56,7 +56,9 @@ export function NotebookPage() {
 
     const fetchNotebook = async () => {
       try {
-        const response = await fetch(notebook.path);
+        const basePath = import.meta.env.BASE_URL || '/';
+        const fullPath = `${basePath}${notebook.path.startsWith('/') ? notebook.path.slice(1) : notebook.path}`;
+        const response = await fetch(fullPath);
         if (!response.ok) {
           throw new Error('Failed to load notebook');
         }
