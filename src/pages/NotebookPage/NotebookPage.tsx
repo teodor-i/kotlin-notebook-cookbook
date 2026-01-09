@@ -187,6 +187,32 @@ export function NotebookPage() {
   );
 }
 
+// Extract DataFrame content from iframe srcdoc
+function extractDataFrameContent(html: string): string | null {
+  try {
+    // Extract srcdoc attribute content
+    const srcdocMatch = html.match(/srcdoc="([^"]+)"/);
+    if (!srcdocMatch) return null;
+
+    // Decode HTML entities
+    const decoded = srcdocMatch[1]
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&amp;/g, '&')
+      .replace(/&sol;/g, '/')
+      .replace(/&#39;/g, "'");
+
+    // Extract body content
+    const bodyMatch = decoded.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+    if (!bodyMatch) return null;
+
+    return bodyMatch[1];
+  } catch {
+    return null;
+  }
+}
+
 interface NotebookCellViewProps {
   cell: NotebookCell;
 }
@@ -210,6 +236,21 @@ function NotebookCellView({ cell }: NotebookCellViewProps) {
       const html = Array.isArray(output.data['text/html'])
         ? output.data['text/html'].join('')
         : output.data['text/html'];
+
+      // Check if this is a DataFrame iframe
+      if (html.includes('srcdoc=') && html.includes('dataframe')) {
+        const extractedContent = extractDataFrameContent(html);
+        if (extractedContent) {
+          return (
+            <div
+              key={index}
+              className="cell-output cell-output-dataframe"
+              dangerouslySetInnerHTML={{ __html: extractedContent }}
+            />
+          );
+        }
+      }
+
       return (
         <div
           key={index}
