@@ -26,6 +26,30 @@ export function MainPage() {
     [filteredNotebooks]
   );
 
+  const springAiTutorials = useMemo(
+    () => filteredNotebooks.filter((n) =>
+      n.tags.some((tag) => tag.name === 'Spring AI Tutorials')
+    ),
+    [filteredNotebooks]
+  );
+
+  const kotlinLanguageNotebooks = useMemo(
+    () => filteredNotebooks.filter((n) =>
+      n.tags.some((tag) => tag.name === 'Kotlin Language')
+    ),
+    [filteredNotebooks]
+  );
+
+  const moreNotebooks = useMemo(() => {
+    const shownIds = new Set([
+      ...bestToStartNotebooks.map((n) => n.id),
+      ...featuredNotebooks.map((n) => n.id),
+      ...springAiTutorials.map((n) => n.id),
+      ...kotlinLanguageNotebooks.map((n) => n.id),
+    ]);
+    return filteredNotebooks.filter((n) => !shownIds.has(n.id));
+  }, [filteredNotebooks, bestToStartNotebooks, featuredNotebooks, springAiTutorials, kotlinLanguageNotebooks]);
+
   const handleTopicClick = (topicId: string) => {
     setSelectedTopic((prev) => (prev === topicId ? null : topicId));
   };
@@ -72,10 +96,26 @@ export function MainPage() {
         title="Featured cookbooks"
       />
 
-      <NotebookList
-        notebooks={filteredNotebooks}
-        title={selectedTopic ? `${selectedTopicName} Notebooks` : 'All Notebooks'}
-      />
+      {springAiTutorials.length > 0 && (
+        <NotebookList
+          notebooks={springAiTutorials}
+          title="Spring AI Tutorials"
+        />
+      )}
+
+      {kotlinLanguageNotebooks.length > 0 && (
+        <NotebookList
+          notebooks={kotlinLanguageNotebooks}
+          title="Kotlin Language Features"
+        />
+      )}
+
+      {moreNotebooks.length > 0 && (
+        <NotebookList
+          notebooks={moreNotebooks}
+          title="More notebooks"
+        />
+      )}
     </div>
   );
 }

@@ -1,15 +1,52 @@
 import type { Notebook, Topic } from '../types';
 
 export const topics: Topic[] = [
-  { id: 'dataframe', name: 'DataFrame', backgroundImage: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' },
-  { id: 'kandy', name: 'Kandy', backgroundImage: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)' },
-  { id: 'api', name: 'API', backgroundImage: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)' },
-  { id: 'spring-ai', name: 'Spring AI', backgroundImage: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)' },
-  { id: 'ktor', name: 'Ktor', backgroundImage: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)' },
-  { id: 'basics', name: 'Basics', backgroundImage: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)' },
+  {
+    id: 'dataframe',
+    name: 'DataFrame',
+    backgroundImage: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    description: 'Kotlin DataFrame is a library for in-memory data manipulation. It provides a type-safe API for data analysis, transformation, and visualization.',
+    relatedTags: ['DataFrame'],
+  },
+  {
+    id: 'kandy',
+    name: 'Kandy',
+    backgroundImage: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+    description: 'Kandy is a Kotlin library for data visualization. Create beautiful charts and plots with a declarative DSL that integrates seamlessly with DataFrame.',
+    relatedTags: ['Kandy'],
+  },
+  {
+    id: 'api',
+    name: 'API',
+    backgroundImage: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+    description: 'Learn how to work with external APIs in Kotlin notebooks. Fetch data from REST endpoints, parse JSON, and integrate with various web services.',
+    relatedTags: ['API', 'Ktor'],
+  },
+  {
+    id: 'spring-ai',
+    name: 'Spring AI',
+    backgroundImage: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
+    description: 'Spring AI provides a familiar Spring-based programming model for AI applications. Build intelligent apps with LLMs, embeddings, and vector stores.',
+    relatedTags: ['Spring AI', 'AI', 'LLM'],
+  },
+  {
+    id: 'ktor',
+    name: 'Ktor',
+    backgroundImage: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+    description: 'Ktor is an asynchronous framework for creating microservices and web applications. Build HTTP clients and servers with Kotlin coroutines.',
+    relatedTags: ['Ktor'],
+  },
+  {
+    id: 'basics',
+    name: 'Basics',
+    backgroundImage: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+    description: 'Get started with Kotlin notebooks. Learn the fundamentals of Kotlin programming, language features, and how to use notebooks effectively.',
+    relatedTags: ['Basics'],
+  },
 ];
 
 export const notebooks: Notebook[] = [
+  // Best to Start notebooks
   {
     id: 'basics',
     title: 'Basics',
@@ -20,7 +57,6 @@ export const notebooks: Notebook[] = [
       { name: 'DataFrame', color: '#3b82f6' },
     ],
     path: '/assets/actual_notebooks/Basics.ipynb',
-    featured: true,
     bestToStart: true,
   },
   {
@@ -30,7 +66,6 @@ export const notebooks: Notebook[] = [
     authors: [{ name: 'Kotlin team', verified: true }],
     tags: [{ name: 'Basics', color: '#22c55e' }],
     path: '/assets/actual_notebooks/Features.ipynb',
-    featured: true,
     bestToStart: true,
   },
   {
@@ -42,6 +77,236 @@ export const notebooks: Notebook[] = [
     path: '/assets/actual_notebooks/import.ipynb',
     bestToStart: true,
   },
+
+  // Spring AI Tutorials (1-10)
+  {
+    id: 'spring-ai-overview',
+    title: 'Spring AI Overview',
+    date: 'Jan 9, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [
+      { name: 'Spring AI Tutorials', color: '#11998e' },
+      { name: 'Spring AI', color: '#43e97b' },
+    ],
+    path: '/assets/actual_notebooks/Spring AI/1. Spring AI Overview.ipynb',
+  },
+  {
+    id: 'spring-ai-intro',
+    title: 'Spring AI Intro',
+    date: 'Jan 9, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [
+      { name: 'Spring AI Tutorials', color: '#11998e' },
+      { name: 'Spring AI', color: '#43e97b' },
+    ],
+    path: '/assets/actual_notebooks/Spring AI/2. Intro.ipynb',
+    featured: true,
+  },
+  {
+    id: 'kotlin-ai-prompts',
+    title: 'Kotlin AI Prompts',
+    date: 'Jan 9, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [
+      { name: 'Spring AI Tutorials', color: '#11998e' },
+      { name: 'Spring AI', color: '#43e97b' },
+      { name: 'LLM', color: '#ec4899' },
+    ],
+    path: '/assets/actual_notebooks/Spring AI/3. Kotlin AI Prompts.ipynb',
+    featured: true,
+  },
+  {
+    id: 'streaming-tutorial',
+    title: 'Streaming Tutorial',
+    date: 'Jan 9, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [
+      { name: 'Spring AI Tutorials', color: '#11998e' },
+      { name: 'Spring AI', color: '#43e97b' },
+    ],
+    path: '/assets/actual_notebooks/Spring AI/4. Streaming Tutorial.ipynb',
+  },
+  {
+    id: 'spring-ai-tools',
+    title: 'Tools',
+    date: 'Jan 9, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [
+      { name: 'Spring AI Tutorials', color: '#11998e' },
+      { name: 'Spring AI', color: '#43e97b' },
+    ],
+    path: '/assets/actual_notebooks/Spring AI/5. Tools.ipynb',
+  },
+  {
+    id: 'structured-outputs',
+    title: 'Structured Outputs',
+    date: 'Jan 9, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [
+      { name: 'Spring AI Tutorials', color: '#11998e' },
+      { name: 'Spring AI', color: '#43e97b' },
+    ],
+    path: '/assets/actual_notebooks/Spring AI/6. Structured Outputs.ipynb',
+  },
+  {
+    id: 'advisors',
+    title: 'Advisors',
+    date: 'Jan 9, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [
+      { name: 'Spring AI Tutorials', color: '#11998e' },
+      { name: 'Spring AI', color: '#43e97b' },
+    ],
+    path: '/assets/actual_notebooks/Spring AI/7. Advisors.ipynb',
+  },
+  {
+    id: 'rag-tutorial',
+    title: 'RAG Tutorial',
+    date: 'Jan 9, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [
+      { name: 'Spring AI Tutorials', color: '#11998e' },
+      { name: 'Spring AI', color: '#43e97b' },
+      { name: 'LLM', color: '#ec4899' },
+    ],
+    path: '/assets/actual_notebooks/Spring AI/8. RAG Tutorial.ipynb',
+  },
+  {
+    id: 'text-to-image',
+    title: 'Text to Image',
+    date: 'Jan 9, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [
+      { name: 'Spring AI Tutorials', color: '#11998e' },
+      { name: 'Spring AI', color: '#43e97b' },
+    ],
+    path: '/assets/actual_notebooks/Spring AI/9. text-to-image.ipynb',
+  },
+  {
+    id: 'text-to-audio',
+    title: 'Text to Audio',
+    date: 'Jan 9, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [
+      { name: 'Spring AI Tutorials', color: '#11998e' },
+      { name: 'Spring AI', color: '#43e97b' },
+    ],
+    path: '/assets/actual_notebooks/Spring AI/10. Text to Audio.ipynb',
+  },
+
+  // Spring AI Agents notebooks
+  {
+    id: 'evaluator-optimizer',
+    title: 'Evaluator-Optimizer Workflow',
+    date: 'Jan 9, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [
+      { name: 'Spring AI', color: '#43e97b' },
+      { name: 'AI', color: '#8b5cf6' },
+      { name: 'Agents', color: '#f59e0b' },
+    ],
+    path: '/assets/actual_notebooks/Spring AI/agents/Evaluator-Optimizer Workflow.ipynb',
+  },
+  {
+    id: 'orchestrator-workers',
+    title: 'Orchestrator-Workers Workflow',
+    date: 'Jan 9, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [
+      { name: 'Spring AI', color: '#43e97b' },
+      { name: 'AI', color: '#8b5cf6' },
+      { name: 'Agents', color: '#f59e0b' },
+    ],
+    path: '/assets/actual_notebooks/Spring AI/agents/Orchestrator-Workers Workflow.ipynb',
+  },
+  {
+    id: 'parallelization',
+    title: 'Parallelization Workflow',
+    date: 'Jan 9, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [
+      { name: 'Spring AI', color: '#43e97b' },
+      { name: 'AI', color: '#8b5cf6' },
+      { name: 'Agents', color: '#f59e0b' },
+    ],
+    path: '/assets/actual_notebooks/Spring AI/agents/Parallelization Workflow.ipynb',
+  },
+  {
+    id: 'prompt-chaining',
+    title: 'Prompt-Chaining Workflow',
+    date: 'Jan 9, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [
+      { name: 'Spring AI', color: '#43e97b' },
+      { name: 'AI', color: '#8b5cf6' },
+      { name: 'Agents', color: '#f59e0b' },
+    ],
+    path: '/assets/actual_notebooks/Spring AI/agents/Prompt-Chaining Workflow.ipynb',
+  },
+  {
+    id: 'routing',
+    title: 'Routing Workflow',
+    date: 'Jan 9, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [
+      { name: 'Spring AI', color: '#43e97b' },
+      { name: 'AI', color: '#8b5cf6' },
+      { name: 'Agents', color: '#f59e0b' },
+    ],
+    path: '/assets/actual_notebooks/Spring AI/agents/Routing Workflow.ipynb',
+  },
+
+  // Kotlin Language Features (from Kotlin_Course)
+  {
+    id: 'intro-to-kotlin',
+    title: 'Introduction to Kotlin',
+    date: 'Jan 8, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [{ name: 'Kotlin Language', color: '#7f52ff' }],
+    path: '/assets/actual_notebooks/Kotlin_Course/notebooks/introduction/IntroductionToKotlin.ipynb',
+  },
+  {
+    id: 'collections',
+    title: 'Collections',
+    date: 'Jan 8, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [{ name: 'Kotlin Language', color: '#7f52ff' }],
+    path: '/assets/actual_notebooks/Kotlin_Course/notebooks/collections/Collections.ipynb',
+  },
+  {
+    id: 'generics',
+    title: 'Generics',
+    date: 'Jan 8, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [{ name: 'Kotlin Language', color: '#7f52ff' }],
+    path: '/assets/actual_notebooks/Kotlin_Course/notebooks/generics/Generics.ipynb',
+  },
+  {
+    id: 'oop',
+    title: 'Object Oriented Programming',
+    date: 'Jan 8, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [{ name: 'Kotlin Language', color: '#7f52ff' }],
+    path: '/assets/actual_notebooks/Kotlin_Course/notebooks/oop/ObjectOrientedProgramming.ipynb',
+  },
+  {
+    id: 'fp',
+    title: 'Functional Programming',
+    date: 'Jan 8, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [{ name: 'Kotlin Language', color: '#7f52ff' }],
+    path: '/assets/actual_notebooks/Kotlin_Course/notebooks/fp/FP.ipynb',
+  },
+  {
+    id: 'parallel',
+    title: 'Parallel Programming',
+    date: 'Jan 8, 2026',
+    authors: [{ name: 'Kotlin team', verified: true }],
+    tags: [{ name: 'Kotlin Language', color: '#7f52ff' }],
+    path: '/assets/actual_notebooks/Kotlin_Course/notebooks/parallel/Parallel.ipynb',
+  },
+
+  // Original notebooks
   {
     id: 'star-history',
     title: 'GitHub Star History with DataFrame and Kandy',
@@ -77,6 +342,7 @@ export const notebooks: Notebook[] = [
       { name: 'Kandy', color: '#f093fb' },
     ],
     path: '/assets/actual_notebooks/IMDB Notebook.ipynb',
+    featured: true,
   },
   {
     id: 'http-example',
@@ -126,6 +392,7 @@ export const notebooks: Notebook[] = [
       { name: 'DataFrame', color: '#3b82f6' },
     ],
     path: '/assets/actual_notebooks/Get Currency Rates.ipynb',
+    featured: true,
   },
   {
     id: 'new-library-documentation',

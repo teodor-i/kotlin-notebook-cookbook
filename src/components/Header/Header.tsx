@@ -57,9 +57,7 @@ export function Header({ onThemeToggle, isDarkMode = true }: HeaderProps) {
 
 function KotlinLogo() {
   return (
-    <svg width="140" height="24" viewBox="0 0 140 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="header-kotlin-logo">
-      <text x="0" y="18" className="logo-text">Kotlin Cookbook</text>
-    </svg>
+    <span className="header-logo-text">Kotlin Notebook Cookbook</span>
   );
 }
 

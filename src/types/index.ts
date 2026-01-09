@@ -24,6 +24,8 @@ export interface Topic {
   id: string;
   name: string;
   backgroundImage: string;
+  description: string;
+  relatedTags?: string[];
 }
 
 export interface NotebookCell {
