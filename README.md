@@ -2,7 +2,7 @@
 
 This repository contains sample Kotlin Notebooks that could serve as templates for your tasks.
 
-Other examples of interesting Notebooks:
+Wider list of repositories with examples of interesting Notebooks:
 
 ### **Kotlin DataFrame Notebooks**
 https://github.com/Kotlin/dataframe/tree/master/examples/notebooks  
