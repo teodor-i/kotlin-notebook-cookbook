@@ -356,7 +356,7 @@ export const notebooks: Notebook[] = [
       { name: 'Ktor', color: '#ef4444' },
       { name: 'API', color: '#06b6d4' },
     ],
-    path: '/assets/actual_notebooks/http-example.ipynb',
+    path: '/assets/actual_notebooks/More Notebooks/http-example.ipynb',
   },
   {
     id: 'weather-notebook',
@@ -367,7 +367,7 @@ export const notebooks: Notebook[] = [
       { name: 'API', color: '#06b6d4' },
       { name: 'DataFrame', color: '#3b82f6' },
     ],
-    path: '/assets/actual_notebooks/Weather Notebook.ipynb',
+    path: '/assets/actual_notebooks/More Notebooks/Weather Notebook.ipynb',
   },
   {
     id: 'db-actors',
@@ -375,7 +375,7 @@ export const notebooks: Notebook[] = [
     date: 'Dec 15, 2025',
     authors: [{ name: 'Kotlin team', verified: true }],
     tags: [{ name: 'API', color: '#06b6d4' }],
-    path: '/assets/actual_notebooks/DBActors.ipynb',
+    path: '/assets/actual_notebooks/More Notebooks/DBActors.ipynb',
   },
   {
     id: 'benchmarks',
@@ -383,7 +383,7 @@ export const notebooks: Notebook[] = [
     date: 'Dec 10, 2025',
     authors: [{ name: 'Kotlin team', verified: true }],
     tags: [{ name: 'Basics', color: '#22c55e' }],
-    path: '/assets/actual_notebooks/benchmarks.ipynb',
+    path: '/assets/actual_notebooks/More Notebooks/benchmarks.ipynb',
   },
   {
     id: 'currency-rates',
@@ -403,6 +403,6 @@ export const notebooks: Notebook[] = [
     date: 'Nov 28, 2025',
     authors: [{ name: 'Kotlin team', verified: true }],
     tags: [{ name: 'Basics', color: '#22c55e' }],
-    path: '/assets/actual_notebooks/New Library documentation.ipynb',
+    path: '/assets/actual_notebooks/More Notebooks/New Library documentation.ipynb',
   },
 ];

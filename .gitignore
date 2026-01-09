@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 /src/assets/screenshots/
 /src/assets/promt.txt
+.claude/
