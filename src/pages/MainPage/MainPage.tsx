@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { TopicCard } from '../../components/TopicCard';
 import { NotebookList } from '../../components/NotebookList';
 import { notebooks, topics } from '../../data/notebooks';
+import { TAGS } from '../../data/constants';
 import './MainPage.css';
 
 export function MainPage() {
@@ -28,28 +29,28 @@ export function MainPage() {
 
   const springAiTutorials = useMemo(
     () => filteredNotebooks.filter((n) =>
-      n.tags.some((tag) => tag.name === 'Spring AI Tutorials')
+      n.tags.some((tag) => tag.name === TAGS.SPRING_AI_TUTORIALS)
     ),
     [filteredNotebooks]
   );
 
   const kotlinLanguageNotebooks = useMemo(
     () => filteredNotebooks.filter((n) =>
-      n.tags.some((tag) => tag.name === 'Kotlin Language')
+      n.tags.some((tag) => tag.name === TAGS.KOTLIN_LANGUAGE)
     ),
     [filteredNotebooks]
   );
 
   const chartsNotebooks = useMemo(
     () => filteredNotebooks.filter((n) =>
-      n.tags.some((tag) => tag.name === 'Charts')
+      n.tags.some((tag) => tag.name === TAGS.CHARTS)
     ),
     [filteredNotebooks]
   );
 
   const dataFrameExamples = useMemo(
     () => filteredNotebooks.filter((n) =>
-      n.tags.some((tag) => tag.name === 'DataFrame Examples')
+      n.tags.some((tag) => tag.name === TAGS.DATAFRAME_EXAMPLES)
     ),
     [filteredNotebooks]
   );

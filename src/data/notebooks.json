@@ -1,0 +1,529 @@
+{
+  "topics": [
+    {
+      "id": "dataframe",
+      "name": "DataFrame",
+      "backgroundImage": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+      "description": "Kotlin DataFrame is a library for in-memory data manipulation. It provides a type-safe API for data analysis, transformation, and visualization.",
+      "relatedTags": ["DataFrame"]
+    },
+    {
+      "id": "kandy",
+      "name": "Kandy",
+      "backgroundImage": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+      "description": "Kandy is a Kotlin library for data visualization. Create beautiful charts and plots with a declarative DSL that integrates seamlessly with DataFrame.",
+      "relatedTags": ["Kandy"]
+    },
+    {
+      "id": "api",
+      "name": "API",
+      "backgroundImage": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+      "description": "Learn how to work with external APIs in Kotlin notebooks. Fetch data from REST endpoints, parse JSON, and integrate with various web services.",
+      "relatedTags": ["API", "Ktor"]
+    },
+    {
+      "id": "spring-ai",
+      "name": "Spring AI",
+      "backgroundImage": "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
+      "description": "Spring AI provides a familiar Spring-based programming model for AI applications. Build intelligent apps with LLMs, embeddings, and vector stores.",
+      "relatedTags": ["Spring AI", "AI", "LLM"]
+    },
+    {
+      "id": "ktor",
+      "name": "Ktor",
+      "backgroundImage": "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
+      "description": "Ktor is an asynchronous framework for creating microservices and web applications. Build HTTP clients and servers with Kotlin coroutines.",
+      "relatedTags": ["Ktor"]
+    },
+    {
+      "id": "basics",
+      "name": "Basics",
+      "backgroundImage": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
+      "description": "Get started with Kotlin notebooks. Learn the fundamentals of Kotlin programming, language features, and how to use notebooks effectively.",
+      "relatedTags": ["Basics"]
+    }
+  ],
+  "notebooks": [
+    {
+      "id": "welcome-to-kotlin-notebook",
+      "title": "Welcome to Kotlin Notebook",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Basics"],
+      "path": "/assets/actual_notebooks/Basics/Welcome to Kotlin Notebook.ipynb",
+      "bestToStart": true
+    },
+    {
+      "id": "play-with-statistics",
+      "title": "Play with Statistics",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Basics", "DataFrame"],
+      "path": "/assets/actual_notebooks/Basics/Play with Statistics.ipynb",
+      "bestToStart": true
+    },
+    {
+      "id": "dataframe-quickstart",
+      "title": "DataFrame Quickstart",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Basics", "DataFrame"],
+      "path": "/assets/actual_notebooks/Basics/DataFrame quickstart.ipynb",
+      "bestToStart": true
+    },
+    {
+      "id": "spring-ai-overview",
+      "title": "Spring AI Overview",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Spring AI Tutorials", "Spring AI"],
+      "path": "/assets/actual_notebooks/Spring AI/1. Spring AI Overview.ipynb"
+    },
+    {
+      "id": "spring-ai-intro",
+      "title": "Spring AI Intro",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Spring AI Tutorials", "Spring AI"],
+      "path": "/assets/actual_notebooks/Spring AI/2. Intro.ipynb",
+      "featured": true
+    },
+    {
+      "id": "kotlin-ai-prompts",
+      "title": "Kotlin AI Prompts",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Spring AI Tutorials", "Spring AI", "LLM"],
+      "path": "/assets/actual_notebooks/Spring AI/3. Kotlin AI Prompts.ipynb",
+      "featured": true
+    },
+    {
+      "id": "streaming-tutorial",
+      "title": "Streaming Tutorial",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Spring AI Tutorials", "Spring AI"],
+      "path": "/assets/actual_notebooks/Spring AI/4. Streaming Tutorial.ipynb"
+    },
+    {
+      "id": "spring-ai-tools",
+      "title": "Spring AI Tools",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Spring AI Tutorials", "Spring AI"],
+      "path": "/assets/actual_notebooks/Spring AI/5. Tools.ipynb"
+    },
+    {
+      "id": "structured-outputs",
+      "title": "Structured Outputs",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Spring AI Tutorials", "Spring AI"],
+      "path": "/assets/actual_notebooks/Spring AI/6. Structured Outputs.ipynb"
+    },
+    {
+      "id": "advisors",
+      "title": "Spring AI Advisors",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Spring AI Tutorials", "Spring AI"],
+      "path": "/assets/actual_notebooks/Spring AI/7. Advisors.ipynb"
+    },
+    {
+      "id": "rag-tutorial",
+      "title": "RAG Tutorial",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Spring AI Tutorials", "Spring AI", "LLM"],
+      "path": "/assets/actual_notebooks/Spring AI/8. RAG Tutorial.ipynb"
+    },
+    {
+      "id": "text-to-image",
+      "title": "Text to Image",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Spring AI Tutorials", "Spring AI"],
+      "path": "/assets/actual_notebooks/Spring AI/9. text-to-image.ipynb"
+    },
+    {
+      "id": "text-to-audio",
+      "title": "Text to Audio",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Spring AI Tutorials", "Spring AI"],
+      "path": "/assets/actual_notebooks/Spring AI/10. Text to Audio.ipynb"
+    },
+    {
+      "id": "evaluator-optimizer",
+      "title": "Evaluator-Optimizer Workflow",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Spring AI", "AI", "Agents"],
+      "path": "/assets/actual_notebooks/Spring AI/agents/Evaluator-Optimizer Workflow.ipynb"
+    },
+    {
+      "id": "orchestrator-workers",
+      "title": "Orchestrator-Workers Workflow",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Spring AI", "AI", "Agents"],
+      "path": "/assets/actual_notebooks/Spring AI/agents/Orchestrator-Workers Workflow.ipynb"
+    },
+    {
+      "id": "parallelization",
+      "title": "Parallelization Workflow",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Spring AI", "AI", "Agents"],
+      "path": "/assets/actual_notebooks/Spring AI/agents/Parallelization Workflow.ipynb"
+    },
+    {
+      "id": "prompt-chaining",
+      "title": "Prompt-Chaining Workflow",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Spring AI", "AI", "Agents"],
+      "path": "/assets/actual_notebooks/Spring AI/agents/Prompt-Chaining Workflow.ipynb"
+    },
+    {
+      "id": "routing",
+      "title": "Routing Workflow",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Spring AI", "AI", "Agents"],
+      "path": "/assets/actual_notebooks/Spring AI/agents/Routing Workflow.ipynb"
+    },
+    {
+      "id": "intro-to-kotlin",
+      "title": "Introduction to Kotlin",
+      "date": "Jan 8, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Kotlin Language"],
+      "path": "/assets/actual_notebooks/Kotlin_Course/notebooks/introduction/IntroductionToKotlin.ipynb"
+    },
+    {
+      "id": "collections",
+      "title": "Collections",
+      "date": "Jan 8, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Kotlin Language"],
+      "path": "/assets/actual_notebooks/Kotlin_Course/notebooks/collections/Collections.ipynb"
+    },
+    {
+      "id": "generics",
+      "title": "Generics",
+      "date": "Jan 8, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Kotlin Language"],
+      "path": "/assets/actual_notebooks/Kotlin_Course/notebooks/generics/Generics.ipynb"
+    },
+    {
+      "id": "oop",
+      "title": "Object Oriented Programming",
+      "date": "Jan 8, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Kotlin Language"],
+      "path": "/assets/actual_notebooks/Kotlin_Course/notebooks/oop/ObjectOrientedProgramming.ipynb"
+    },
+    {
+      "id": "fp",
+      "title": "Functional Programming",
+      "date": "Jan 8, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Kotlin Language"],
+      "path": "/assets/actual_notebooks/Kotlin_Course/notebooks/fp/FP.ipynb"
+    },
+    {
+      "id": "parallel",
+      "title": "Parallel Programming",
+      "date": "Jan 8, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Kotlin Language"],
+      "path": "/assets/actual_notebooks/Kotlin_Course/notebooks/parallel/Parallel.ipynb"
+    },
+    {
+      "id": "charts-quick-start",
+      "title": "Quick Start Guide",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Charts", "Kandy"],
+      "path": "/assets/actual_notebooks/Charts/quick_start_guide.ipynb"
+    },
+    {
+      "id": "charts-scatter",
+      "title": "Scatter Plot",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Charts", "Kandy"],
+      "path": "/assets/actual_notebooks/Charts/scatter.ipynb"
+    },
+    {
+      "id": "charts-lines",
+      "title": "Line Charts",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Charts", "Kandy"],
+      "path": "/assets/actual_notebooks/Charts/lines.ipynb"
+    },
+    {
+      "id": "charts-histogram",
+      "title": "Histogram",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Charts", "Kandy"],
+      "path": "/assets/actual_notebooks/Charts/histogram.ipynb"
+    },
+    {
+      "id": "charts-boxplot",
+      "title": "Boxplot",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Charts", "Kandy"],
+      "path": "/assets/actual_notebooks/Charts/boxplot.ipynb"
+    },
+    {
+      "id": "charts-heatmap",
+      "title": "Heatmap",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Charts", "Kandy"],
+      "path": "/assets/actual_notebooks/Charts/heatmap.ipynb"
+    },
+    {
+      "id": "charts-pie",
+      "title": "Pie Chart",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Charts", "Kandy"],
+      "path": "/assets/actual_notebooks/Charts/pie.ipynb"
+    },
+    {
+      "id": "charts-density",
+      "title": "Density Plot",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Charts", "Kandy"],
+      "path": "/assets/actual_notebooks/Charts/density_plot.ipynb"
+    },
+    {
+      "id": "charts-candlestick",
+      "title": "Candlestick Chart",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Charts", "Kandy"],
+      "path": "/assets/actual_notebooks/Charts/candlestick.ipynb"
+    },
+    {
+      "id": "charts-facets",
+      "title": "Facets",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Charts", "Kandy"],
+      "path": "/assets/actual_notebooks/Charts/facets.ipynb"
+    },
+    {
+      "id": "charts-tooltips",
+      "title": "Tooltips",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Charts", "Kandy"],
+      "path": "/assets/actual_notebooks/Charts/tooltips.ipynb"
+    },
+    {
+      "id": "charts-styles",
+      "title": "Styles",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Charts", "Kandy"],
+      "path": "/assets/actual_notebooks/Charts/styles.ipynb"
+    },
+    {
+      "id": "charts-statistics",
+      "title": "Statistics Guide",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Charts", "Kandy"],
+      "path": "/assets/actual_notebooks/Charts/statistics_guide.ipynb"
+    },
+    {
+      "id": "charts-error-bars",
+      "title": "Error Bars",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Charts", "Kandy"],
+      "path": "/assets/actual_notebooks/Charts/error_bars.ipynb"
+    },
+    {
+      "id": "charts-ribbon",
+      "title": "Ribbon",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Charts", "Kandy"],
+      "path": "/assets/actual_notebooks/Charts/ribbon.ipynb"
+    },
+    {
+      "id": "charts-smoothing",
+      "title": "Smoothing",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Charts", "Kandy"],
+      "path": "/assets/actual_notebooks/Charts/smoothing.ipynb"
+    },
+    {
+      "id": "charts-export",
+      "title": "Export to File",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Charts", "Kandy"],
+      "path": "/assets/actual_notebooks/Charts/export_to_file.ipynb"
+    },
+    {
+      "id": "df-titanic",
+      "title": "Titanic Dataset",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["DataFrame Examples", "DataFrame"],
+      "path": "/assets/actual_notebooks/DataFrame/Titanic.ipynb"
+    },
+    {
+      "id": "df-netflix",
+      "title": "Netflix Dataset",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["DataFrame Examples", "DataFrame"],
+      "path": "/assets/actual_notebooks/DataFrame/netflix.ipynb"
+    },
+    {
+      "id": "df-movies",
+      "title": "Movies Dataset",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["DataFrame Examples", "DataFrame"],
+      "path": "/assets/actual_notebooks/DataFrame/movies.ipynb"
+    },
+    {
+      "id": "df-github",
+      "title": "GitHub Data",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["DataFrame Examples", "DataFrame"],
+      "path": "/assets/actual_notebooks/DataFrame/github.ipynb"
+    },
+    {
+      "id": "df-youtube",
+      "title": "YouTube Data",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["DataFrame Examples", "DataFrame"],
+      "path": "/assets/actual_notebooks/DataFrame/Youtube.ipynb"
+    },
+    {
+      "id": "df-german-companies",
+      "title": "Top 12 German Companies",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["DataFrame Examples", "DataFrame"],
+      "path": "/assets/actual_notebooks/DataFrame/top_12_german_companies.ipynb"
+    },
+    {
+      "id": "df-puzzles",
+      "title": "40 Puzzles",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["DataFrame Examples", "DataFrame"],
+      "path": "/assets/actual_notebooks/DataFrame/40 puzzles.ipynb"
+    },
+    {
+      "id": "df-json",
+      "title": "JSON and OpenAPI",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["DataFrame Examples", "DataFrame"],
+      "path": "/assets/actual_notebooks/DataFrame/KeyValueAndOpenApi.ipynb"
+    },
+    {
+      "id": "df-wine",
+      "title": "Wine Quality with KotlinDL",
+      "date": "Jan 9, 2026",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["DataFrame Examples", "DataFrame"],
+      "path": "/assets/actual_notebooks/DataFrame/WineNetWIthKotlinDL.ipynb"
+    },
+    {
+      "id": "star-history",
+      "title": "GitHub Star History",
+      "date": "Dec 28, 2025",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["DataFrame", "Kandy", "API"],
+      "path": "/assets/actual_notebooks/star_history_with_dataframe_and_kandy.ipynb",
+      "featured": true
+    },
+    {
+      "id": "geo-guide",
+      "title": "Geo Guide",
+      "date": "Dec 25, 2025",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Kandy", "DataFrame"],
+      "path": "/assets/actual_notebooks/Geo Guide.ipynb",
+      "featured": true
+    },
+    {
+      "id": "imdb-notebook",
+      "title": "IMDB Notebook",
+      "date": "Dec 22, 2025",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["DataFrame", "Kandy"],
+      "path": "/assets/actual_notebooks/IMDB Notebook.ipynb",
+      "featured": true
+    },
+    {
+      "id": "http-example",
+      "title": "HTTP Client Example",
+      "date": "Dec 20, 2025",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Ktor", "API"],
+      "path": "/assets/actual_notebooks/More Notebooks/http-example.ipynb"
+    },
+    {
+      "id": "weather-notebook",
+      "title": "Weather Notebook",
+      "date": "Dec 18, 2025",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["API", "DataFrame"],
+      "path": "/assets/actual_notebooks/More Notebooks/Weather Notebook.ipynb"
+    },
+    {
+      "id": "db-actors",
+      "title": "Actors Database",
+      "date": "Dec 15, 2025",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["API"],
+      "path": "/assets/actual_notebooks/More Notebooks/DBActors.ipynb"
+    },
+    {
+      "id": "benchmarks",
+      "title": "Benchmarks",
+      "date": "Dec 10, 2025",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Basics"],
+      "path": "/assets/actual_notebooks/More Notebooks/benchmarks.ipynb"
+    },
+    {
+      "id": "currency-rates",
+      "title": "Get Currency Rates",
+      "date": "Dec 5, 2025",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["API", "DataFrame"],
+      "path": "/assets/actual_notebooks/Get Currency Rates.ipynb",
+      "featured": true
+    },
+    {
+      "id": "new-library-documentation",
+      "title": "Example of Library Documentation",
+      "date": "Nov 28, 2025",
+      "authors": [{ "name": "Kotlin team", "verified": true }],
+      "tags": ["Basics"],
+      "path": "/assets/actual_notebooks/More Notebooks/New Library documentation.ipynb"
+    }
+  ]
+}
