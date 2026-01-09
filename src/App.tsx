@@ -4,6 +4,8 @@ import { Header } from './components';
 import { MainPage, NotebookPage } from './pages';
 import './App.css';
 
+const basename = import.meta.env.BASE_URL || '/';
+
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
@@ -12,7 +14,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <div className={`app ${isDarkMode ? 'dark' : 'light'}`}>
         <Header onThemeToggle={handleThemeToggle} isDarkMode={isDarkMode} />
         <main className="main-content">
