@@ -104,12 +104,12 @@ export function MainPage() {
 
       <NotebookList
         notebooks={bestToStartNotebooks}
-        title="Best to start"
+        title="Getting Started"
       />
 
       <NotebookList
         notebooks={featuredNotebooks}
-        title="Featured cookbooks"
+        title="Featured Notebooks"
       />
 
       {springAiTutorials.length > 0 && (
@@ -143,7 +143,7 @@ export function MainPage() {
       {moreNotebooks.length > 0 && (
         <NotebookList
           notebooks={moreNotebooks}
-          title="More notebooks"
+          title="More Notebooks"
         />
       )}
     </div>

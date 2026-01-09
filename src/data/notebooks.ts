@@ -131,7 +131,7 @@ export const notebooks: Notebook[] = [
   },
   {
     id: 'spring-ai-tools',
-    title: 'Tools',
+    title: 'Spring AI Tools',
     date: 'Jan 9, 2026',
     authors: [{ name: 'Kotlin team', verified: true }],
     tags: [
@@ -153,7 +153,7 @@ export const notebooks: Notebook[] = [
   },
   {
     id: 'advisors',
-    title: 'Advisors',
+    title: 'Spring AI Advisors',
     date: 'Jan 9, 2026',
     authors: [{ name: 'Kotlin team', verified: true }],
     tags: [
@@ -415,14 +415,6 @@ export const notebooks: Notebook[] = [
     path: '/assets/actual_notebooks/Charts/statistics_guide.ipynb',
   },
   {
-    id: 'charts-geo',
-    title: 'Geo Guide',
-    date: 'Jan 9, 2026',
-    authors: [{ name: 'Kotlin team', verified: true }],
-    tags: [{ name: 'Charts', color: '#f093fb' }, { name: 'Kandy', color: '#f093fb' }],
-    path: '/assets/actual_notebooks/Charts/geo_guide.ipynb',
-  },
-  {
     id: 'charts-error-bars',
     title: 'Error Bars',
     date: 'Jan 9, 2026',
@@ -456,14 +448,6 @@ export const notebooks: Notebook[] = [
   },
 
   // DataFrame notebooks
-  {
-    id: 'df-quickstart',
-    title: 'DataFrame Quickstart',
-    date: 'Jan 9, 2026',
-    authors: [{ name: 'Kotlin team', verified: true }],
-    tags: [{ name: 'DataFrame Examples', color: '#667eea' }, { name: 'DataFrame', color: '#3b82f6' }],
-    path: '/assets/actual_notebooks/DataFrame/quickstart.ipynb',
-  },
   {
     id: 'df-titanic',
     title: 'Titanic Dataset',
@@ -536,19 +520,10 @@ export const notebooks: Notebook[] = [
     tags: [{ name: 'DataFrame Examples', color: '#667eea' }, { name: 'DataFrame', color: '#3b82f6' }],
     path: '/assets/actual_notebooks/DataFrame/WineNetWIthKotlinDL.ipynb',
   },
-  {
-    id: 'df-new-features',
-    title: 'New Features',
-    date: 'Jan 9, 2026',
-    authors: [{ name: 'Kotlin team', verified: true }],
-    tags: [{ name: 'DataFrame Examples', color: '#667eea' }, { name: 'DataFrame', color: '#3b82f6' }],
-    path: '/assets/actual_notebooks/DataFrame/new_features.ipynb',
-  },
-
   // Original notebooks
   {
     id: 'star-history',
-    title: 'GitHub Star History with DataFrame and Kandy',
+    title: 'GitHub Star History',
     date: 'Dec 28, 2025',
     authors: [{ name: 'Kotlin team', verified: true }],
     tags: [
@@ -585,7 +560,7 @@ export const notebooks: Notebook[] = [
   },
   {
     id: 'http-example',
-    title: 'HTTP Example',
+    title: 'HTTP Client Example',
     date: 'Dec 20, 2025',
     authors: [{ name: 'Kotlin team', verified: true }],
     tags: [
@@ -607,7 +582,7 @@ export const notebooks: Notebook[] = [
   },
   {
     id: 'db-actors',
-    title: 'DB Actors',
+    title: 'Actors Database',
     date: 'Dec 15, 2025',
     authors: [{ name: 'Kotlin team', verified: true }],
     tags: [{ name: 'API', color: '#06b6d4' }],
@@ -635,7 +610,7 @@ export const notebooks: Notebook[] = [
   },
   {
     id: 'new-library-documentation',
-    title: 'New Library Documentation',
+    title: 'Example of Library Documentation',
     date: 'Nov 28, 2025',
     authors: [{ name: 'Kotlin team', verified: true }],
     tags: [{ name: 'Basics', color: '#22c55e' }],
