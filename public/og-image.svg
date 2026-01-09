@@ -45,6 +45,5 @@
   <text x="50" y="330" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="white">Cookbook</text>
 
   <!-- Subtitle -->
-  <text x="50" y="540" font-family="system-ui, -apple-system, sans-serif" font-size="28" fill="#8b949e">Interactive tutorials for DataFrame, Kandy, Spring AI and more</text>
-  <text x="50" y="580" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="#7f52ff">kotlinlang.org</text>
+  <text x="50" y="550" font-family="system-ui, -apple-system, sans-serif" font-size="32" fill="#8b949e">Examples and tutorials for Kotlin Notebook</text>
 </svg>
