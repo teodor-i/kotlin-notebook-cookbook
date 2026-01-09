@@ -213,6 +213,20 @@ function extractDataFrameContent(html: string): string | null {
   }
 }
 
+// Extract SVG from Lets-Plot/Kandy chart HTML (they include both iframe + SVG fallback)
+function extractPlotSvg(html: string): string | null {
+  try {
+    // Find SVG element after the iframe
+    const svgMatch = html.match(/<svg[^>]*class="plt-container"[\s\S]*<\/svg>/i);
+    if (svgMatch) {
+      return svgMatch[0];
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
 interface NotebookCellViewProps {
   cell: NotebookCell;
 }
@@ -236,6 +250,20 @@ function NotebookCellView({ cell }: NotebookCellViewProps) {
       const html = Array.isArray(output.data['text/html'])
         ? output.data['text/html'].join('')
         : output.data['text/html'];
+
+      // Check if this is a Lets-Plot/Kandy chart (has iframe + SVG fallback)
+      if (html.includes('lets-plot') || html.includes('plt-container')) {
+        const svg = extractPlotSvg(html);
+        if (svg) {
+          return (
+            <div
+              key={index}
+              className="cell-output cell-output-plot"
+              dangerouslySetInnerHTML={{ __html: svg }}
+            />
+          );
+        }
+      }
 
       // Check if this is a DataFrame iframe
       if (html.includes('srcdoc=') && html.includes('dataframe')) {
