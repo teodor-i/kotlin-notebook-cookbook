@@ -219,6 +219,19 @@ function NotebookCellView({ cell }: NotebookCellViewProps) {
   const outputs = cell.outputs || [];
 
   const renderOutput = (output: CellOutput, index: number) => {
+    // Handle Kotlin DataFrame JSON output FIRST (before HTML which may have broken iframe)
+    if (output.data?.['application/kotlindataframe+json']) {
+      const jsonStr = Array.isArray(output.data['application/kotlindataframe+json'])
+        ? output.data['application/kotlindataframe+json'].join('')
+        : output.data['application/kotlindataframe+json'];
+      try {
+        const dfData = JSON.parse(jsonStr);
+        return <DataFrameTable key={index} data={dfData} />;
+      } catch {
+        // Fall through to other handlers if JSON parsing fails
+      }
+    }
+
     // Handle HTML output (includes images, tables, etc.)
     if (output.data?.['text/html']) {
       const html = Array.isArray(output.data['text/html'])
@@ -239,19 +252,9 @@ function NotebookCellView({ cell }: NotebookCellViewProps) {
         }
       }
 
-      // Check if this is a DataFrame iframe - keep iframe as JS populates the table
+      // Skip dataframe iframe HTML (already handled by JSON above, or broken without JS)
       if (html.includes('srcdoc=') && html.includes('dataframe')) {
-        // Clean up the iframe HTML - remove onload handler and fix styling
-        const cleanedHtml = html
-          .replace(/onload="[^"]*"/g, '')
-          .replace(/style="[^"]*"/g, 'style="width:100%; min-height:150px; border:none;"');
-        return (
-          <div
-            key={index}
-            className="cell-output cell-output-dataframe"
-            dangerouslySetInnerHTML={{ __html: cleanedHtml }}
-          />
-        );
+        return null;
       }
 
       return (
@@ -371,6 +374,70 @@ function ErrorIcon() {
       <path d="M12 7v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
       <circle cx="12" cy="16" r="1" fill="currentColor" />
     </svg>
+  );
+}
+
+interface DataFrameData {
+  metadata?: {
+    columns?: string[];
+    nrow?: number;
+    ncol?: number;
+  };
+  kotlin_dataframe?: Record<string, unknown>[];
+}
+
+interface DataFrameTableProps {
+  data: DataFrameData;
+}
+
+function DataFrameTable({ data }: DataFrameTableProps) {
+  const columns = data.metadata?.columns || [];
+  const rows = data.kotlin_dataframe || [];
+  const totalRows = data.metadata?.nrow || rows.length;
+  const displayedRows = rows.slice(0, 100); // Limit to 100 rows for performance
+
+  if (columns.length === 0 || rows.length === 0) {
+    return (
+      <div className="cell-output cell-output-dataframe">
+        <pre>DataFrame: {totalRows} rows, {columns.length} columns</pre>
+      </div>
+    );
+  }
+
+  const formatValue = (value: unknown): string => {
+    if (value === null || value === undefined) return '';
+    if (typeof value === 'object') return JSON.stringify(value);
+    return String(value);
+  };
+
+  return (
+    <div className="cell-output cell-output-dataframe-table">
+      <div className="dataframe-wrapper">
+        <table className="dataframe-table">
+          <thead>
+            <tr>
+              {columns.map((col, i) => (
+                <th key={i}>{col}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {displayedRows.map((row, rowIndex) => (
+              <tr key={rowIndex}>
+                {columns.map((col, colIndex) => (
+                  <td key={colIndex}>{formatValue(row[col])}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {totalRows > displayedRows.length && (
+        <div className="dataframe-truncated">
+          Showing {displayedRows.length} of {totalRows} rows
+        </div>
+      )}
+    </div>
   );
 }
 
