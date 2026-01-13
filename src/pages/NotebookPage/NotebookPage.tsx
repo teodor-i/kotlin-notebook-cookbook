@@ -327,40 +327,67 @@ interface MarkdownContentProps {
 }
 
 function MarkdownContent({ content }: MarkdownContentProps) {
-  // Handle fenced code blocks first (``` or ```` or more)
-  // This regex matches code blocks with 3+ backticks
-  const withCodeBlocks = content.replace(
-    /^(`{3,})(\w*)\n([\s\S]*?)\n\1$/gm,
-    (_match, _ticks, lang, code) => {
-      const escaped = code
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;');
-      const langClass = lang ? ` class="language-${lang}"` : '';
-      return `<pre><code${langClass}>${escaped}</code></pre>`;
-    }
-  );
+  // Split content by fenced code blocks (``` or ```` or more)
+  const codeBlockRegex = /^(`{3,})(\w*)\n([\s\S]*?)\n\1$/gm;
+  const parts: Array<{ type: 'text' | 'code'; content: string; language?: string }> = [];
 
-  // Simple markdown parsing for the rest
-  const html = withCodeBlocks
-    .replace(/^### (.+)$/gm, '<h3 id="$1">$1</h3>')
-    .replace(/^## (.+)$/gm, '<h2 id="$1">$1</h2>')
-    .replace(/^# (.+)$/gm, '<h1 id="$1">$1</h1>')
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.+?)\*/g, '<em>$1</em>')
-    .replace(/`(.+?)`/g, '<code>$1</code>')
-    .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-    .replace(/^- (.+)$/gm, '<li>$1</li>')
-    .replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>')
-    .replace(/\n\n/g, '</p><p>')
-    .replace(/^(?!<[hul\p])/gm, '<p>')
-    .replace(/(?<![>])$/gm, '</p>');
+  let lastIndex = 0;
+  let match;
+
+  while ((match = codeBlockRegex.exec(content)) !== null) {
+    // Add text before this code block
+    if (match.index > lastIndex) {
+      parts.push({ type: 'text', content: content.slice(lastIndex, match.index) });
+    }
+    // Add the code block
+    parts.push({ type: 'code', content: match[3], language: match[2] || 'text' });
+    lastIndex = match.index + match[0].length;
+  }
+
+  // Add remaining text after last code block
+  if (lastIndex < content.length) {
+    parts.push({ type: 'text', content: content.slice(lastIndex) });
+  }
+
+  // If no code blocks found, treat entire content as text
+  if (parts.length === 0) {
+    parts.push({ type: 'text', content });
+  }
+
+  const parseMarkdownText = (text: string) => {
+    return text
+      .replace(/^### (.+)$/gm, '<h3 id="$1">$1</h3>')
+      .replace(/^## (.+)$/gm, '<h2 id="$1">$1</h2>')
+      .replace(/^# (.+)$/gm, '<h1 id="$1">$1</h1>')
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em>$1</em>')
+      .replace(/`(.+?)`/g, '<code>$1</code>')
+      .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+      .replace(/^- (.+)$/gm, '<li>$1</li>')
+      .replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>')
+      .replace(/\n\n/g, '</p><p>')
+      .replace(/^(?!<[hul\p])/gm, '<p>')
+      .replace(/(?<![>])$/gm, '</p>');
+  };
 
   return (
-    <div
-      className="markdown-body"
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
+    <div className="markdown-body">
+      {parts.map((part, index) => {
+        if (part.type === 'code') {
+          return (
+            <div key={index} className="markdown-code-block">
+              <CodeBlock code={part.content} language={part.language} />
+            </div>
+          );
+        }
+        return (
+          <div
+            key={index}
+            dangerouslySetInnerHTML={{ __html: parseMarkdownText(part.content) }}
+          />
+        );
+      })}
+    </div>
   );
 }
 

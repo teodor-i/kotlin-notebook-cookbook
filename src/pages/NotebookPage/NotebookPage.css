@@ -356,6 +356,14 @@
   white-space: pre;
 }
 
+.markdown-code-block {
+  margin: 0.5rem 0;
+}
+
+.markdown-code-block .code-block-wrapper pre {
+  line-height: 1.4;
+}
+
 .markdown-body a {
   color: var(--accent-color);
 }
