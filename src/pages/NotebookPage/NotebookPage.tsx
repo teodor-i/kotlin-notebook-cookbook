@@ -327,8 +327,22 @@ interface MarkdownContentProps {
 }
 
 function MarkdownContent({ content }: MarkdownContentProps) {
-  // Simple markdown parsing
-  const html = content
+  // Handle fenced code blocks first (``` or ```` or more)
+  // This regex matches code blocks with 3+ backticks
+  const withCodeBlocks = content.replace(
+    /^(`{3,})(\w*)\n([\s\S]*?)\n\1$/gm,
+    (_match, _ticks, lang, code) => {
+      const escaped = code
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+      const langClass = lang ? ` class="language-${lang}"` : '';
+      return `<pre><code${langClass}>${escaped}</code></pre>`;
+    }
+  );
+
+  // Simple markdown parsing for the rest
+  const html = withCodeBlocks
     .replace(/^### (.+)$/gm, '<h3 id="$1">$1</h3>')
     .replace(/^## (.+)$/gm, '<h2 id="$1">$1</h2>')
     .replace(/^# (.+)$/gm, '<h1 id="$1">$1</h1>')
@@ -339,7 +353,7 @@ function MarkdownContent({ content }: MarkdownContentProps) {
     .replace(/^- (.+)$/gm, '<li>$1</li>')
     .replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>')
     .replace(/\n\n/g, '</p><p>')
-    .replace(/^(?!<[hul])/gm, '<p>')
+    .replace(/^(?!<[hul\p])/gm, '<p>')
     .replace(/(?<![>])$/gm, '</p>');
 
   return (

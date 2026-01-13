@@ -339,6 +339,23 @@
   font-size: 0.875em;
 }
 
+.markdown-body pre {
+  background-color: #24292e;
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.5rem 0;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  padding: 0;
+  color: #e1e4e8;
+  font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+  font-size: 0.8125rem;
+  white-space: pre;
+}
+
 .markdown-body a {
   color: var(--accent-color);
 }
